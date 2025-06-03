@@ -14,7 +14,7 @@ const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
 
   const navItems = [
     { path: '/', label: 'Naslovna' },
-    { path: '/jelovnik', label: 'Jelovnik' },
+    { path: '/radionice', label: 'Radionice' },
     { path: '/kontakt', label: 'Kontakt' },
     { path: '/prijava', label: 'Prijava' },
     { path: '/admin', label: 'Admin' },

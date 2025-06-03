@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
-import { ChefHat, Clock, Star } from 'lucide-react';
+import { School, Paintbrush, Book, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
   const animatedTexts = [
-    'Najbolja hrana u gradu',
-    'Brza dostava',
-    'Svježi sastojci',
-    'Odličan ukus'
+    'Kreativne radionice za djecu',
+    'Sigurno okruženje',
+    'Iskusni voditelji',
+    'Zabava i učenje'
   ];
 
   useEffect(() => {
@@ -30,19 +30,19 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-fade-in">
-          <div className="flex justify-center mb-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-full p-6">
-              <ChefHat className="h-16 w-16 text-white" />
+          <div className="animate-fade-in">
+            <div className="flex justify-center mb-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-full p-6">
+                <School className="h-16 w-16 text-white" />
+              </div>
             </div>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Mini TVZ
-            <span className="block text-3xl md:text-4xl font-normal mt-2 text-blue-200">
-              Restoran
-            </span>
-          </h1>
+            
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              Mini TVZ
+              <span className="block text-3xl md:text-4xl font-normal mt-2 text-blue-200">
+                Radionice
+              </span>
+            </h1>
           
           <div className="h-16 mb-8">
             <p className="text-xl md:text-2xl text-blue-100 animate-fade-in">
@@ -52,28 +52,28 @@ const HeroSection = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all duration-300">
-              <Clock className="h-8 w-8 text-blue-200 mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-white mb-2">Brza dostava</h3>
-              <p className="text-blue-200">Dostava za 30 minuta</p>
+              <Paintbrush className="h-8 w-8 text-blue-200 mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-white mb-2">Kreativnost</h3>
+              <p className="text-blue-200">Razvijanje kreativnih vještina</p>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all duration-300">
-              <Star className="h-8 w-8 text-blue-200 mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-white mb-2">Kvaliteta</h3>
-              <p className="text-blue-200">5 zvjezdica kvalitete</p>
+              <Book className="h-8 w-8 text-blue-200 mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-white mb-2">Edukacija</h3>
+              <p className="text-blue-200">Učenje kroz zabavu</p>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all duration-300">
-              <ChefHat className="h-8 w-8 text-blue-200 mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-white mb-2">Svježe</h3>
-              <p className="text-blue-200">Dnevno svježi sastojci</p>
+              <Users className="h-8 w-8 text-blue-200 mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-white mb-2">Sigurnost</h3>
+              <p className="text-blue-200">Iskusni voditelji radionice</p>
             </div>
           </div>
 
           <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
-            <Link to="/jelovnik">
+            <Link to="/radionice">
               <Button size="lg" className="w-full sm:w-auto bg-white text-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
-                Pogledaj jelovnik
+                Pogledaj radionice
               </Button>
             </Link>
             <Link to="/kontakt">
@@ -82,7 +82,7 @@ const HeroSection = () => {
                 variant="outline" 
                 className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
               >
-                Kontaktiraj nas
+                Prijavi dijete
               </Button>
             </Link>
           </div>

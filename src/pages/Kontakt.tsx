@@ -71,7 +71,7 @@ const Kontakt = () => {
             Kontaktirajte nas
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            Imate pitanja? Rado ćemo vam pomoći!
+            Imate pitanja o radionicama? Rado ćemo vam pomoći!
           </p>
         </div>
 
@@ -189,7 +189,7 @@ const Kontakt = () => {
               <CardContent>
                 <p className="text-gray-600 dark:text-gray-300">
                   info@minitvz.hr<br />
-                  narudzbe@minitvz.hr
+                  radionice@minitvz.hr
                 </p>
               </CardContent>
             </Card>
@@ -203,9 +203,9 @@ const Kontakt = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2 text-gray-600 dark:text-gray-300">
-                  <p><strong>Ponedjeljak - Petak:</strong> 08:00 - 22:00</p>
-                  <p><strong>Subota:</strong> 10:00 - 23:00</p>
-                  <p><strong>Nedjelja:</strong> 12:00 - 21:00</p>
+                  <p><strong>Ponedjeljak - Petak:</strong> 15:00 - 19:00</p>
+                  <p><strong>Subota:</strong> 09:00 - 17:00</p>
+                  <p><strong>Nedjelja:</strong> 10:00 - 16:00</p>
                 </div>
               </CardContent>
             </Card>

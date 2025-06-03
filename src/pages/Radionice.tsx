@@ -2,87 +2,103 @@ import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Pizza, Sandwich, Coffee, Star } from 'lucide-react';
+import { Paintbrush, Book, Users, School, Star } from 'lucide-react';
 
-const Jelovnik = () => {
+const Radionice = () => {
   const [selectedCategory, setSelectedCategory] = useState('sve');
 
-  const menuData = {
-    pizza: [
+  const workshopData = {
+    kreativne: [
       {
         id: 1,
-        name: 'Margherita',
-        description: 'Klasična pizza s rajčicom, mozzarellom i bosiljkom',
-        price: '65 kn',
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop',
-        rating: 4.8,
+        name: 'Crtanje i slikanje',
+        description: 'Kreativno izražavanje kroz različite tehnike crtanja i slikanja',
+        price: '80 kn',
+        duration: '90 min',
+        age: '6-12 godina',
+        image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=200&fit=crop',
+        rating: 4.9,
         popular: true
       },
       {
         id: 2,
-        name: 'Quattro Stagioni',
-        description: 'Pizza s gljivama, šunkom, artičokama i maslinama',
-        price: '75 kn',
-        image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=300&h=200&fit=crop',
+        name: 'Ručni rad',
+        description: 'Izrada kreativnih predmeta od različitih materijala',
+        price: '70 kn',
+        duration: '75 min',
+        age: '5-10 godina',
+        image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=300&h=200&fit=crop',
         rating: 4.7,
         popular: false
       },
       {
         id: 3,
-        name: 'Prosciutto',
-        description: 'Pizza s prosciuttom, rukolom i parmezanom',
-        price: '80 kn',
-        image: 'https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=300&h=200&fit=crop',
-        rating: 4.9,
+        name: 'Keramičarska radionica',
+        description: 'Rad s glinom i stvaranje vlastitih keramičkih djela',
+        price: '100 kn',
+        duration: '120 min',
+        age: '8-14 godina',
+        image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=200&fit=crop',
+        rating: 4.8,
         popular: false
       }
     ],
-    burgeri: [
+    edukativne: [
       {
         id: 4,
-        name: 'Classic Burger',
-        description: 'Govežji pljeskavica, salata, rajčica, krastavac',
-        price: '45 kn',
-        image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&h=200&fit=crop',
-        rating: 4.6,
+        name: 'Robotika za početnike',
+        description: 'Uvod u svijet robotike i programiranja za djecu',
+        price: '120 kn',
+        duration: '90 min',
+        age: '8-14 godina',
+        image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop',
+        rating: 4.9,
         popular: true
       },
       {
         id: 5,
-        name: 'Cheese Burger',
-        description: 'Classic burger s dodatnim sirom',
-        price: '50 kn',
-        image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=300&h=200&fit=crop',
-        rating: 4.5,
+        name: 'Eksperimenti',
+        description: 'Zabavni znanstveni eksperimenti i demonstracije',
+        price: '90 kn',
+        duration: '75 min',
+        age: '6-12 godina',
+        image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=300&h=200&fit=crop',
+        rating: 4.6,
         popular: false
       },
       {
         id: 6,
-        name: 'BBQ Burger',
-        description: 'Burger s BBQ umakom, slaninom i cibulom',
-        price: '55 kn',
-        image: 'https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=300&h=200&fit=crop',
-        rating: 4.7,
+        name: 'Matematičke igre',
+        description: 'Učenje matematike kroz zabavne igre i aktivnosti',
+        price: '60 kn',
+        duration: '60 min',
+        age: '7-11 godina',
+        image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=300&h=200&fit=crop',
+        rating: 4.5,
         popular: false
       }
     ],
-    napici: [
+    sportske: [
       {
         id: 7,
-        name: 'Coca Cola',
-        description: 'Osvježavajući gaziran napitak',
-        price: '15 kn',
-        image: 'https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=300&h=200&fit=crop',
-        rating: 4.3,
+        name: 'Mini nogomet',
+        description: 'Osnove nogometa i timska igra',
+        price: '50 kn',
+        duration: '60 min',
+        age: '5-10 godina',
+        image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=200&fit=crop',
+        rating: 4.4,
         popular: false
       },
       {
         id: 8,
-        name: 'Cappuccino',
-        description: 'Aromatična kava s mlijekom',
-        price: '18 kn',
-        image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=300&h=200&fit=crop',
-        rating: 4.8,
+        name: 'Ples i pokret',
+        description: 'Kreativni pokret i osnove plesa',
+        price: '65 kn',
+        duration: '45 min',
+        age: '4-8 godina',
+        image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=300&h=200&fit=crop',
+        rating: 4.7,
         popular: false
       }
     ]
@@ -90,16 +106,16 @@ const Jelovnik = () => {
 
   const categories = [
     { id: 'sve', label: 'Sve', icon: Star },
-    { id: 'pizza', label: 'Pizza', icon: Pizza },
-    { id: 'burgeri', label: 'Burgeri', icon: Sandwich },
-    { id: 'napici', label: 'Napici', icon: Coffee }
+    { id: 'kreativne', label: 'Kreativne', icon: Paintbrush },
+    { id: 'edukativne', label: 'Edukativne', icon: Book },
+    { id: 'sportske', label: 'Sportske', icon: Users }
   ];
 
   const getFilteredItems = () => {
     if (selectedCategory === 'sve') {
-      return [...menuData.pizza, ...menuData.burgeri, ...menuData.napici];
+      return [...workshopData.kreativne, ...workshopData.edukativne, ...workshopData.sportske];
     }
-    return menuData[selectedCategory as keyof typeof menuData] || [];
+    return workshopData[selectedCategory as keyof typeof workshopData] || [];
   };
 
   return (
@@ -107,10 +123,10 @@ const Jelovnik = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Naš Jelovnik
+            Naše Radionice
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            Otkrijte našu bogatu ponudu ukusnih jela
+            Otkrijte našu bogatu ponudu edukativnih i zabavnih radionica
           </p>
         </div>
 
@@ -132,7 +148,7 @@ const Jelovnik = () => {
           })}
         </div>
 
-        {/* Menu Items Grid */}
+        {/* Workshop Items Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {getFilteredItems().map((item) => (
             <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
@@ -159,11 +175,16 @@ const Jelovnik = () => {
                     {item.price}
                   </span>
                 </div>
-                <CardDescription>{item.description}</CardDescription>
+                <CardDescription className="space-y-1">
+                  <p>{item.description}</p>
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Trajanje:</strong> {item.duration} | <strong>Uzrast:</strong> {item.age}
+                  </p>
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button className="w-full">
-                  Dodaj u košaricu
+                  Prijavi dijete
                 </Button>
               </CardContent>
             </Card>
@@ -182,4 +203,4 @@ const Jelovnik = () => {
   );
 };
 
-export default Jelovnik;
+export default Radionice;

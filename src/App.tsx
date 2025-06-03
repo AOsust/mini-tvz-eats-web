@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Index from "./pages/Index";
-import Jelovnik from "./pages/Jelovnik";
+import Radionice from "./pages/Radionice";
 import Kontakt from "./pages/Kontakt";
 import Prijava from "./pages/Prijava";
 import Admin from "./pages/Admin";
@@ -46,7 +46,7 @@ const App = () => {
           <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/jelovnik" element={<Jelovnik />} />
+            <Route path="/radionice" element={<Radionice />} />
             <Route path="/kontakt" element={<Kontakt />} />
             <Route path="/prijava" element={<Prijava />} />
             <Route path="/admin" element={<Admin />} />
