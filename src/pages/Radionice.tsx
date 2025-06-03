@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Paintbrush, Book, Users, School, Star } from 'lucide-react';
+import { Paintbrush, Book, Users, School, Star, Computer, Music } from 'lucide-react';
 
 const Radionice = () => {
   const [selectedCategory, setSelectedCategory] = useState('sve');
@@ -100,6 +100,98 @@ const Radionice = () => {
         image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=300&h=200&fit=crop',
         rating: 4.7,
         popular: false
+      },
+      {
+        id: 9,
+        name: 'Karate za djecu',
+        description: 'Borilačke vještine i disciplina',
+        price: '75 kn',
+        duration: '60 min',
+        age: '6-12 godina',
+        image: 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=300&h=200&fit=crop',
+        rating: 4.6,
+        popular: false
+      },
+      {
+        id: 10,
+        name: 'Plivanje',
+        description: 'Učenje plivanja s profesionalnim instruktorom',
+        price: '85 kn',
+        duration: '45 min',
+        age: '4-10 godina',
+        image: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=300&h=200&fit=crop',
+        rating: 4.8,
+        popular: true
+      }
+    ],
+    tehnološke: [
+      {
+        id: 11,
+        name: 'Programiranje igrica',
+        description: 'Stvaranje jednostavnih igrica u Scratch-u',
+        price: '110 kn',
+        duration: '90 min',
+        age: '9-15 godina',
+        image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=300&h=200&fit=crop',
+        rating: 4.9,
+        popular: true
+      },
+      {
+        id: 12,
+        name: '3D modeliranje',
+        description: 'Osnove 3D modeliranja i printanja',
+        price: '95 kn',
+        duration: '75 min',
+        age: '10-16 godina',
+        image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=300&h=200&fit=crop',
+        rating: 4.6,
+        popular: false
+      },
+      {
+        id: 13,
+        name: 'Arduino radionice',
+        description: 'Programiranje mikrokontrolera i elektronika',
+        price: '130 kn',
+        duration: '120 min',
+        age: '12-18 godina',
+        image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=200&fit=crop',
+        rating: 4.7,
+        popular: false
+      }
+    ],
+    glazbene: [
+      {
+        id: 14,
+        name: 'Gitara za početnike',
+        description: 'Osnove sviranja gitare i čitanja nota',
+        price: '80 kn',
+        duration: '60 min',
+        age: '7-14 godina',
+        image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop',
+        rating: 4.5,
+        popular: false
+      },
+      {
+        id: 15,
+        name: 'Klavir za djecu',
+        description: 'Učenje klavira kroz igru i zabavu',
+        price: '90 kn',
+        duration: '45 min',
+        age: '5-12 godina',
+        image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=300&h=200&fit=crop',
+        rating: 4.8,
+        popular: false
+      },
+      {
+        id: 16,
+        name: 'Pjevanje i vokali',
+        description: 'Razvoj vokalne tehnike i samopozdana',
+        price: '70 kn',
+        duration: '60 min',
+        age: '6-16 godina',
+        image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop',
+        rating: 4.7,
+        popular: false
       }
     ]
   };
@@ -108,12 +200,14 @@ const Radionice = () => {
     { id: 'sve', label: 'Sve', icon: Star },
     { id: 'kreativne', label: 'Kreativne', icon: Paintbrush },
     { id: 'edukativne', label: 'Edukativne', icon: Book },
-    { id: 'sportske', label: 'Sportske', icon: Users }
+    { id: 'sportske', label: 'Sportske', icon: Users },
+    { id: 'tehnološke', label: 'Tehnološke', icon: Computer },
+    { id: 'glazbene', label: 'Glazbene', icon: Music }
   ];
 
   const getFilteredItems = () => {
     if (selectedCategory === 'sve') {
-      return [...workshopData.kreativne, ...workshopData.edukativne, ...workshopData.sportske];
+      return [...workshopData.kreativne, ...workshopData.edukativne, ...workshopData.sportske, ...workshopData.tehnološke, ...workshopData.glazbene];
     }
     return workshopData[selectedCategory as keyof typeof workshopData] || [];
   };
