@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 interface NavigationProps {
   darkMode: boolean;
@@ -10,6 +11,7 @@ interface NavigationProps {
 
 const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [language, setLanguage] = useState('hr');
   const location = useLocation();
 
   const navItems = [
@@ -49,11 +51,21 @@ const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
                 {item.label}
               </Link>
             ))}
+            <Select value={language} onValueChange={setLanguage}>
+              <SelectTrigger className="w-20 h-9 bg-transparent border-gray-300 dark:border-gray-600">
+                <Globe className="h-4 w-4" />
+              </SelectTrigger>
+              <SelectContent className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                <SelectItem value="hr" className="hover:bg-gray-100 dark:hover:bg-gray-700">HR</SelectItem>
+                <SelectItem value="en" className="hover:bg-gray-100 dark:hover:bg-gray-700">EN</SelectItem>
+                <SelectItem value="de" className="hover:bg-gray-100 dark:hover:bg-gray-700">DE</SelectItem>
+              </SelectContent>
+            </Select>
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleDarkMode}
-              className="ml-4"
+              className="ml-2"
             >
               {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -61,6 +73,16 @@ const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
+            <Select value={language} onValueChange={setLanguage}>
+              <SelectTrigger className="w-16 h-9 bg-transparent border-gray-300 dark:border-gray-600 mr-2">
+                <Globe className="h-4 w-4" />
+              </SelectTrigger>
+              <SelectContent className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                <SelectItem value="hr" className="hover:bg-gray-100 dark:hover:bg-gray-700">HR</SelectItem>
+                <SelectItem value="en" className="hover:bg-gray-100 dark:hover:bg-gray-700">EN</SelectItem>
+                <SelectItem value="de" className="hover:bg-gray-100 dark:hover:bg-gray-700">DE</SelectItem>
+              </SelectContent>
+            </Select>
             <Button
               variant="ghost"
               size="icon"
