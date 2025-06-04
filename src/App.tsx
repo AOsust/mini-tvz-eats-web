@@ -10,7 +10,7 @@ import Index from "./pages/Index";
 import Radionice from "./pages/Radionice";
 import Kontakt from "./pages/Kontakt";
 import Prijava from "./pages/Prijava";
-import Admin from "./pages/Admin";
+import Registracija from "./pages/Registracija";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,7 +50,7 @@ const App = () => {
             <Route path="/radionice" element={<Radionice />} />
             <Route path="/kontakt" element={<Kontakt />} />
             <Route path="/prijava" element={<Prijava />} />
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/registracija" element={<Registracija />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

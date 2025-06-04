@@ -17,7 +17,7 @@ const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
     { path: '/radionice', label: 'Radionice' },
     { path: '/kontakt', label: 'Kontakt' },
     { path: '/prijava', label: 'Prijava' },
-    { path: '/admin', label: 'Admin' },
+    { path: '/registracija', label: 'Registracija' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
