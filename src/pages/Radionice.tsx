@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -6,6 +7,7 @@ import { Paintbrush, Book, Users, School, Star, Computer, Music } from 'lucide-r
 
 const Radionice = () => {
   const [selectedCategory, setSelectedCategory] = useState('sve');
+  const navigate = useNavigate();
 
   const workshopData = {
     kreativne: [
@@ -13,7 +15,7 @@ const Radionice = () => {
         id: 1,
         name: 'Crtanje i slikanje',
         description: 'Kreativno izražavanje kroz različite tehnike crtanja i slikanja',
-        price: '80 kn',
+        price: '80 €',
         duration: '90 min',
         age: '6-12 godina',
         image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=200&fit=crop',
@@ -24,7 +26,7 @@ const Radionice = () => {
         id: 2,
         name: 'Ručni rad',
         description: 'Izrada kreativnih predmeta od različitih materijala',
-        price: '70 kn',
+        price: '70 €',
         duration: '75 min',
         age: '5-10 godina',
         image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=300&h=200&fit=crop',
@@ -35,7 +37,7 @@ const Radionice = () => {
         id: 3,
         name: 'Keramičarska radionica',
         description: 'Rad s glinom i stvaranje vlastitih keramičkih djela',
-        price: '100 kn',
+        price: '100 €',
         duration: '120 min',
         age: '8-14 godina',
         image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=200&fit=crop',
@@ -48,7 +50,7 @@ const Radionice = () => {
         id: 4,
         name: 'Robotika za početnike',
         description: 'Uvod u svijet robotike i programiranja za djecu',
-        price: '120 kn',
+        price: '120 €',
         duration: '90 min',
         age: '8-14 godina',
         image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop',
@@ -59,7 +61,7 @@ const Radionice = () => {
         id: 5,
         name: 'Eksperimenti',
         description: 'Zabavni znanstveni eksperimenti i demonstracije',
-        price: '90 kn',
+        price: '90 €',
         duration: '75 min',
         age: '6-12 godina',
         image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=300&h=200&fit=crop',
@@ -70,7 +72,7 @@ const Radionice = () => {
         id: 6,
         name: 'Matematičke igre',
         description: 'Učenje matematike kroz zabavne igre i aktivnosti',
-        price: '60 kn',
+        price: '60 €',
         duration: '60 min',
         age: '7-11 godina',
         image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=300&h=200&fit=crop',
@@ -83,7 +85,7 @@ const Radionice = () => {
         id: 7,
         name: 'Mini nogomet',
         description: 'Osnove nogometa i timska igra',
-        price: '50 kn',
+        price: '50 €',
         duration: '60 min',
         age: '5-10 godina',
         image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=200&fit=crop',
@@ -94,7 +96,7 @@ const Radionice = () => {
         id: 8,
         name: 'Ples i pokret',
         description: 'Kreativni pokret i osnove plesa',
-        price: '65 kn',
+        price: '65 €',
         duration: '45 min',
         age: '4-8 godina',
         image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=300&h=200&fit=crop',
@@ -105,7 +107,7 @@ const Radionice = () => {
         id: 9,
         name: 'Karate za djecu',
         description: 'Borilačke vještine i disciplina',
-        price: '75 kn',
+        price: '75 €',
         duration: '60 min',
         age: '6-12 godina',
         image: 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=300&h=200&fit=crop',
@@ -116,7 +118,7 @@ const Radionice = () => {
         id: 10,
         name: 'Plivanje',
         description: 'Učenje plivanja s profesionalnim instruktorom',
-        price: '85 kn',
+        price: '85 €',
         duration: '45 min',
         age: '4-10 godina',
         image: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=300&h=200&fit=crop',
@@ -129,7 +131,7 @@ const Radionice = () => {
         id: 11,
         name: 'Programiranje igrica',
         description: 'Stvaranje jednostavnih igrica u Scratch-u',
-        price: '110 kn',
+        price: '110 €',
         duration: '90 min',
         age: '9-15 godina',
         image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=300&h=200&fit=crop',
@@ -140,7 +142,7 @@ const Radionice = () => {
         id: 12,
         name: '3D modeliranje',
         description: 'Osnove 3D modeliranja i printanja',
-        price: '95 kn',
+        price: '95 €',
         duration: '75 min',
         age: '10-16 godina',
         image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=300&h=200&fit=crop',
@@ -151,7 +153,7 @@ const Radionice = () => {
         id: 13,
         name: 'Arduino radionice',
         description: 'Programiranje mikrokontrolera i elektronika',
-        price: '130 kn',
+        price: '130 €',
         duration: '120 min',
         age: '12-18 godina',
         image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=200&fit=crop',
@@ -164,7 +166,7 @@ const Radionice = () => {
         id: 14,
         name: 'Gitara za početnike',
         description: 'Osnove sviranja gitare i čitanja nota',
-        price: '80 kn',
+        price: '80 €',
         duration: '60 min',
         age: '7-14 godina',
         image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop',
@@ -175,7 +177,7 @@ const Radionice = () => {
         id: 15,
         name: 'Klavir za djecu',
         description: 'Učenje klavira kroz igru i zabavu',
-        price: '90 kn',
+        price: '90 €',
         duration: '45 min',
         age: '5-12 godina',
         image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=300&h=200&fit=crop',
@@ -186,7 +188,7 @@ const Radionice = () => {
         id: 16,
         name: 'Pjevanje i vokali',
         description: 'Razvoj vokalne tehnike i samopozdana',
-        price: '70 kn',
+        price: '70 €',
         duration: '60 min',
         age: '6-16 godina',
         image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop',
@@ -277,7 +279,10 @@ const Radionice = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full">
+                <Button 
+                  className="w-full"
+                  onClick={() => navigate('/registracija')}
+                >
                   Prijavi dijete
                 </Button>
               </CardContent>
