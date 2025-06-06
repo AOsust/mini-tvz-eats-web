@@ -3,196 +3,185 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Paintbrush, Book, Users, School, Star, Computer, Music } from 'lucide-react';
+import { Paintbrush, Book, School, Star, Computer, Code } from 'lucide-react';
 
 const Radionice = () => {
   const [selectedCategory, setSelectedCategory] = useState('sve');
   const navigate = useNavigate();
 
   const workshopData = {
-    kreativne: [
+    početničke: [
       {
         id: 1,
-        name: 'Crtanje i slikanje',
-        description: 'Kreativno izražavanje kroz različite tehnike crtanja i slikanja',
+        name: 'Programiranje igara u Scratch-u',
+        description: 'Prvi koraci u svijetu programiranja kroz kreiranje jednostavnih igara',
         price: '80 €',
-        duration: '90 min',
-        age: '6-12 godina',
-        image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=200&fit=crop',
+        duration: '60 min',
+        age: '7-10 godina',
+        image: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=300&h=200&fit=crop',
         rating: 4.9,
         popular: true
       },
       {
         id: 2,
-        name: 'Ručni rad',
-        description: 'Izrada kreativnih predmeta od različitih materijala',
+        name: 'Mali izumitelji',
+        description: 'Upoznavanje s osnovama tehnologije kroz zabavne projekte',
         price: '70 €',
-        duration: '75 min',
-        age: '5-10 godina',
-        image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=300&h=200&fit=crop',
+        duration: '60 min',
+        age: '5-8 godina',
+        image: 'https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=300&h=200&fit=crop',
         rating: 4.7,
         popular: false
       },
       {
         id: 3,
-        name: 'Keramičarska radionica',
-        description: 'Rad s glinom i stvaranje vlastitih keramičkih djela',
-        price: '100 €',
-        duration: '120 min',
-        age: '8-14 godina',
-        image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=200&fit=crop',
+        name: 'Igraonica robotike',
+        description: 'Upoznavanje s robotima i jednostavnim programiranjem',
+        price: '90 €',
+        duration: '60 min',
+        age: '6-9 godina',
+        image: 'https://images.unsplash.com/photo-1535378620166-273708d44e4c?w=300&h=200&fit=crop',
         rating: 4.8,
-        popular: false
+        popular: true
       }
     ],
-    edukativne: [
+    programiranje: [
       {
         id: 4,
-        name: 'Robotika za početnike',
-        description: 'Uvod u svijet robotike i programiranja za djecu',
-        price: '120 €',
-        duration: '90 min',
-        age: '8-14 godina',
-        image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop',
+        name: 'Python za djecu',
+        description: 'Uvod u programiranje kroz Python jezik i zabavne zadatke',
+        price: '100 €',
+        duration: '75 min',
+        age: '10-14 godina',
+        image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=300&h=200&fit=crop',
         rating: 4.9,
         popular: true
       },
       {
         id: 5,
-        name: 'Eksperimenti',
-        description: 'Zabavni znanstveni eksperimenti i demonstracije',
-        price: '90 €',
+        name: 'Razvoj web stranica',
+        description: 'Osnove HTML-a i CSS-a kroz izradu vlastite web stranice',
+        price: '95 €',
         duration: '75 min',
-        age: '6-12 godina',
-        image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=300&h=200&fit=crop',
+        age: '11-15 godina',
+        image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=300&h=200&fit=crop',
         rating: 4.6,
         popular: false
       },
       {
         id: 6,
-        name: 'Matematičke igre',
-        description: 'Učenje matematike kroz zabavne igre i aktivnosti',
-        price: '60 €',
-        duration: '60 min',
-        age: '7-11 godina',
-        image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=300&h=200&fit=crop',
+        name: 'JavaScript za tinejdžere',
+        description: 'Učenje interaktivnog programiranja kroz zanimljive projekte',
+        price: '110 €',
+        duration: '90 min',
+        age: '13-17 godina',
+        image: 'https://images.unsplash.com/photo-1536148935331-408321065b18?w=300&h=200&fit=crop',
         rating: 4.5,
         popular: false
       }
     ],
-    sportske: [
+    robotika: [
       {
         id: 7,
-        name: 'Mini nogomet',
-        description: 'Osnove nogometa i timska igra',
-        price: '50 €',
-        duration: '60 min',
-        age: '5-10 godina',
-        image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=200&fit=crop',
-        rating: 4.4,
-        popular: false
+        name: 'Lego Mindstorms radionice',
+        description: 'Programiranje i izgradnja robota pomoću Lego setova',
+        price: '120 €',
+        duration: '90 min',
+        age: '9-15 godina',
+        image: 'https://images.unsplash.com/photo-1635016288720-c52507075ad8?w=300&h=200&fit=crop',
+        rating: 4.9,
+        popular: true
       },
       {
         id: 8,
-        name: 'Ples i pokret',
-        description: 'Kreativni pokret i osnove plesa',
-        price: '65 €',
-        duration: '45 min',
-        age: '4-8 godina',
-        image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=300&h=200&fit=crop',
+        name: 'Arduino za početnike',
+        description: 'Prvi koraci u elektronici i programiranju mikrokontrolera',
+        price: '105 €',
+        duration: '90 min',
+        age: '12-16 godina',
+        image: 'https://images.unsplash.com/photo-1553406830-ef2513450d76?w=300&h=200&fit=crop',
         rating: 4.7,
         popular: false
       },
       {
         id: 9,
-        name: 'Karate za djecu',
-        description: 'Borilačke vještine i disciplina',
-        price: '75 €',
-        duration: '60 min',
-        age: '6-12 godina',
-        image: 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=300&h=200&fit=crop',
-        rating: 4.6,
+        name: 'Mobilna robotika',
+        description: 'Izrada i programiranje mobilnih robota',
+        price: '130 €',
+        duration: '100 min',
+        age: '10-16 godina',
+        image: 'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=300&h=200&fit=crop',
+        rating: 4.8,
         popular: false
-      },
+      }
+    ],
+    digitalno: [
       {
         id: 10,
-        name: 'Plivanje',
-        description: 'Učenje plivanja s profesionalnim instruktorom',
+        name: 'Digitalna umjetnost',
+        description: 'Kreiranje digitalne umjetnosti kroz računalne programe',
         price: '85 €',
-        duration: '45 min',
-        age: '4-10 godina',
-        image: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=300&h=200&fit=crop',
-        rating: 4.8,
-        popular: true
-      }
-    ],
-    tehnološke: [
-      {
-        id: 11,
-        name: 'Programiranje igrica',
-        description: 'Stvaranje jednostavnih igrica u Scratch-u',
-        price: '110 €',
-        duration: '90 min',
-        age: '9-15 godina',
-        image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=300&h=200&fit=crop',
-        rating: 4.9,
-        popular: true
-      },
-      {
-        id: 12,
-        name: '3D modeliranje',
-        description: 'Osnove 3D modeliranja i printanja',
-        price: '95 €',
         duration: '75 min',
-        age: '10-16 godina',
-        image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=300&h=200&fit=crop',
+        age: '8-14 godina',
+        image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=300&h=200&fit=crop',
         rating: 4.6,
         popular: false
       },
       {
-        id: 13,
-        name: 'Arduino radionice',
-        description: 'Programiranje mikrokontrolera i elektronika',
-        price: '130 €',
-        duration: '120 min',
-        age: '12-18 godina',
-        image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=200&fit=crop',
-        rating: 4.7,
-        popular: false
-      }
-    ],
-    glazbene: [
-      {
-        id: 14,
-        name: 'Gitara za početnike',
-        description: 'Osnove sviranja gitare i čitanja nota',
-        price: '80 €',
-        duration: '60 min',
-        age: '7-14 godina',
-        image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop',
+        id: 11,
+        name: '3D modeliranje za djecu',
+        description: 'Izrada jednostavnih 3D modela i pripreme za 3D ispis',
+        price: '95 €',
+        duration: '80 min',
+        age: '10-15 godina',
+        image: 'https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?w=300&h=200&fit=crop',
         rating: 4.5,
         popular: false
       },
       {
-        id: 15,
-        name: 'Klavir za djecu',
-        description: 'Učenje klavira kroz igru i zabavu',
+        id: 12,
+        name: 'Animacija i filmovi',
+        description: 'Stvaranje vlastitih animacija i digitalnih priča',
         price: '90 €',
-        duration: '45 min',
-        age: '5-12 godina',
-        image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=300&h=200&fit=crop',
+        duration: '85 min',
+        age: '9-14 godina',
+        image: 'https://images.unsplash.com/photo-1616499370260-485b3e5ed3fd?w=300&h=200&fit=crop',
+        rating: 4.7,
+        popular: true
+      }
+    ],
+    napredne: [
+      {
+        id: 13,
+        name: 'Razvoj mobilnih aplikacija',
+        description: 'Kreiranje jednostavnih mobilnih aplikacija s pravim alatima',
+        price: '140 €',
+        duration: '100 min',
+        age: '14-18 godina',
+        image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=200&fit=crop',
         rating: 4.8,
-        popular: false
+        popular: true
       },
       {
-        id: 16,
-        name: 'Pjevanje i vokali',
-        description: 'Razvoj vokalne tehnike i samopozdana',
-        price: '70 €',
-        duration: '60 min',
-        age: '6-16 godina',
-        image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop',
-        rating: 4.7,
+        id: 14,
+        name: 'Game development',
+        description: 'Razvoj 2D igara pomoću Unity game engine-a',
+        price: '150 €',
+        duration: '105 min',
+        age: '13-18 godina',
+        image: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=300&h=200&fit=crop',
+        rating: 4.9,
+        popular: true
+      },
+      {
+        id: 15,
+        name: 'Umjetna inteligencija za mlade',
+        description: 'Uvod u AI koncepte i primjenu kroz praktične primjere',
+        price: '135 €',
+        duration: '90 min',
+        age: '14-18 godina',
+        image: 'https://images.unsplash.com/photo-1677093685943-da40a25cea1f?w=300&h=200&fit=crop',
+        rating: 4.6,
         popular: false
       }
     ]
@@ -200,16 +189,16 @@ const Radionice = () => {
 
   const categories = [
     { id: 'sve', label: 'Sve', icon: Star },
-    { id: 'kreativne', label: 'Kreativne', icon: Paintbrush },
-    { id: 'edukativne', label: 'Edukativne', icon: Book },
-    { id: 'sportske', label: 'Sportske', icon: Users },
-    { id: 'tehnološke', label: 'Tehnološke', icon: Computer },
-    { id: 'glazbene', label: 'Glazbene', icon: Music }
+    { id: 'početničke', label: 'Početničke', icon: Book },
+    { id: 'programiranje', label: 'Programiranje', icon: Computer },
+    { id: 'robotika', label: 'Robotika', icon: School },
+    { id: 'digitalno', label: 'Digitalno', icon: Paintbrush },
+    { id: 'napredne', label: 'Napredne', icon: Code }
   ];
 
   const getFilteredItems = () => {
     if (selectedCategory === 'sve') {
-      return [...workshopData.kreativne, ...workshopData.edukativne, ...workshopData.sportske, ...workshopData.tehnološke, ...workshopData.glazbene];
+      return [...workshopData.početničke, ...workshopData.programiranje, ...workshopData.robotika, ...workshopData.digitalno, ...workshopData.napredne];
     }
     return workshopData[selectedCategory as keyof typeof workshopData] || [];
   };
@@ -222,7 +211,7 @@ const Radionice = () => {
             Naše Radionice
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            Otkrijte našu bogatu ponudu edukativnih i zabavnih radionica
+            Otkrijte našu bogatu ponudu informatičkih radionica za djecu
           </p>
         </div>
 
